@@ -1,65 +1,46 @@
-# vscode-krpano README
+![Screenshot](images/icon.jpg)
 
-This is the README for your extension "vscode-krpano". After writing up a brief description, we recommend including the following sections.
+# Krpano Markup Language for Visual Studo Code
+
+This extension add support to write XML files for [Krpano](https://krpano.com/), a small and very flexible high-performance viewer for all kind of panoramic images and interactive virtual tours.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+At the momment it only features syntax highlighting.
 
-For example if there is an image subfolder under your extension project workspace:
+![Screenshot](images/vscode-krpano-markup-language.jpg)
 
-\!\[feature X\]\(images/feature-x.png\)
+## Installation
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Navigate to the VS Code extensions folder.
 
-## Requirements
+Windows: %USERPROFILE%\.vscode\extensions
+macOS/Linux: $HOME/.vscode/extensions
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+2. Clone this project
 
-## Extension Settings
+``git clone https://github.com/rafaelgpaz/krpano-markup-language.git``
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+3. In VS Code open the user settings.
 
-For example:
+4. Add the following line:
 
-This extension contributes the following settings:
+```json
+    "files.associations": {
+        "*.xml": "krpano"
+    }
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+```
 
-## Known Issues
+## ToDo
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Indentation rules
+- Snippets
+- Intellisense
+- Hovers
+- Validators
 
-## Release Notes
+## Contribute
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Please contribute to make this extension grow and help other developers to create fantastic 360 virtual tours with Krpano.
+Fork this project, report any issues or send your comments and suggestions.

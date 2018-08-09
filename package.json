@@ -1,26 +1,42 @@
 {
     "name": "vscode-krpano",
-    "displayName": "vscode-krpano",
+    "displayName": "Krpano markup language for VS Code",
     "description": "An extension for VS Code which provides support for the Krpano language.",
     "version": "0.0.1",
     "publisher": "RafaelGPaz",
+    "homepage": "https://github.com/rafaelgpaz/vscode-krpano-language",
+    "bugs": {
+        "url": "https://github.com/rafaelgpaz/vscode-krpano-language/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rafaelgpaz/vscode-krpano-language.git"
+    },
+    "icon": "images/icon.png",
     "engines": {
         "vscode": "^1.24.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages", "Snippets", "Other"
+    ],
+    "keywords": [
+        "krpano", "xml", "snippets"
     ],
     "contributes": {
         "languages": [{
-            "id": "xml",
-            "aliases": ["Krpano Markup Language", "xml"],
-            "extensions": [".xml"],
+            "id": "krpano",
+            "aliases": ["Krpano Markup Language", "krpano"],
+            "extensions": ["xml"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "xml",
-            "scopeName": "source.xml.kml",
-            "path": "./syntaxes/kml.tmLanguage"
+            "language": "krpano",
+            "scopeName": "source.xml",
+            "path": "./syntaxes/krpano-tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "krpano",
+            "path": "./snippets/xml.json"
         }]
     }
 }

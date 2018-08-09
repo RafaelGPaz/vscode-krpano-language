@@ -1,0 +1,11 @@
+{
+    "Element > layer": {
+		"prefix": "lay",
+		"body": [
+			"<layer name=\"$1\"",
+			"       $2",
+			"       />"
+		],
+		"description": "Element > layer"
+	}
+}
