@@ -1,4 +1,35 @@
 {
+	// ===================================================================
+	// ELEMENTS
+	// ===================================================================
+
+	"Element > action": {
+		"prefix": "act",
+		"body": [
+			"<action name=\"$1\">",
+			"       $2",
+			"</action>"
+		],
+		"description": "Element > action"
+	},
+    "Element > krpano tags with version": {
+		"prefix": "krpv",
+		"body": [
+			"<krpano version=\"1.19\">",
+			"$1",
+			"</krpano>"
+		],
+		"description": "Element > krpano tags with version"
+	},
+    "Element > krpano tags": {
+		"prefix": "krpv",
+		"body": [
+			"<krpano>",
+			"$1",
+			"</krpano>"
+		],
+		"description": "Element > krpano tags"
+	},
     "Element > layer": {
 		"prefix": "lay",
 		"body": [
@@ -7,5 +38,443 @@
 			"       />"
 		],
 		"description": "Element > layer"
+	},
+    "Element > style": {
+		"prefix": "sty",
+		"body": [
+			"<style name=\"$1\"",
+			"       $2",
+			"       />"
+		],
+		"description": "Element > style"
+	},
+    "Element > textstyle": {
+		"prefix": "textstyle",
+		"body": [
+			"<textstyle name=\"$1\"",
+			"       $2",
+			"       />"
+		],
+		"description": "Element > textstyle"
+	},
+    "Element > view": {
+		"prefix": "view",
+		"body": [
+			"<view hlookat=\"$2\" vlookat=\"$3\" />$0"
+		],
+		"description": "Element > view"
+	},
+
+	// ===================================================================
+	// ACTIONS
+	// ===================================================================
+
+    "Action > trace": {
+		"prefix": "tra",
+		"body": [
+			"trace($1); showlog();"
+		],
+		"description": "Add Krpano trace action"
+	},
+    "Action > trace > get > layer": {
+		"prefix": "tragetlay",
+		"body": [
+			"trace(get(layer[$1].$2)); showlog();"
+		],
+		"description": "Add Krapno trace action getting a layer attribute"
+	},
+    "Action > trace > get > hotspot": {
+		"prefix": "tragethot",
+		"body": [
+			"trace(get(hotspot[$1].$2)); showlog();"
+		],
+		"description": "Add Krpano trace action getting a hotspot attribute"
+	},
+	"Action > delayedcall": {
+		"prefix": "delayedcall",
+		"body": [
+			"delayedcall($1,$2);$0"
+		],
+		"description": "Action > delayedcall"
+	},
+	"Action > get": {
+		"prefix": "get",
+		"body": [
+			"get($1)"
+		],
+		"description": "Action > get"
+	},
+	"Action > get layer": {
+		"prefix": "getla",
+		"body": [
+			"get(layer[$1].$2);"
+		],
+		"description": "Action > get layer"
+	},
+	"Action > get hotspot": {
+		"prefix": "geths",
+		"body": [
+			"get(hotspot[$1].$2);"
+		],
+		"description": "AAction > get hotspot"
+	},
+    "Action > set layer": {
+		"prefix": "setla",
+		"body": [
+			"set(layer[$1].$2,$3);$0"
+		],
+		"description": "Action > set layer"
+	},
+    "Action > set hotspot": {
+		"prefix": "seths",
+		"body": [
+			"set(hotspot[$1].$2,);"
+		],
+		"description": "Action > set hotspot"
+	},
+    "Action > if layer": {
+		"prefix": "ifla",
+		"body": [
+			"if(layer[$1].$2 == \"$3\",",
+			"$4",
+			");"
+		],
+		"description": "Action > if hotlayer"
+	},
+    "Action > if hotspot": {
+		"prefix": "ifhs",
+		"body": [
+			"if(hotspot[$1].$2 == \"$3\",",
+			"$4",
+			");"
+		],
+		"description": "Action > if hotspot"
+	},
+    "Action > tween layer": {
+		"prefix": "twla",
+		"body": [
+			"tween(layer[$1].$2,$3);"
+		],
+		"description": "Action > tween layer"
+	},
+    "Action > tween hotspot": {
+		"prefix": "twhs",
+		"body": [
+			"tween(hotspot[$1].$2,$3);"
+		],
+		"description": "Action > tween hotspot"
+	},
+
+	// ===================================================================
+	// ATTRIBUTES > GLOBAL
+	// ===================================================================
+
+	"Global > align": {
+		"prefix": "align",
+		"body": [
+			"align=\"${1|lefttop,left,leftbottom,top,center,bottom,righttop,right,rightbottom|}\"$0"
+		],
+		"description": "Global > align"
+	},
+	"Global > handcursor": {
+		"prefix": "handcursor",
+		"body": [
+			"handcursor=\"${1|true,false|}\"$0"
+		],
+		"description": "Global > handcursor"
+	},
+	"Global > height": {
+		"prefix": "height",
+		"body": [
+			"height=\"${1}\"$0"
+		],
+		"description": "Global > height"
+	},
+	"Global > keep": {
+		"prefix": "keep",
+		"body": [
+			"keep=\"${1|true,false|}\"$0"
+		],
+		"description": "Global > keep"
+	},
+	"Global > onclick": {
+		"prefix": "onclick",
+		"body": [
+			"onclick=\"${1}\"$0"
+		],
+		"description": "Global > onclick"
+	},
+	"Global > onhover": {
+		"prefix": "onhover",
+		"body": [
+			"onhover=\"${1}\"$0"
+		],
+		"description": "Global > onhover"
+	},
+	"Global > onover": {
+		"prefix": "onover",
+		"body": [
+			"onover=\"${1}\"$0"
+		],
+		"description": "Global > onover"
+	},
+	"Global > onloaded": {
+		"prefix": "onloaded",
+		"body": [
+			"onloaded=\"${1}\"$0"
+		],
+		"description": "Global > onloaded"
+	},
+	"Global > onout": {
+		"prefix": "onout",
+		"body": [
+			"onout=\"${1}\"$0"
+		],
+		"description": "Global > onout"
+	},
+	"Global > parent": {
+		"prefix": "parent",
+		"body": [
+			"parent=\"${1}\"$0"
+		],
+		"description": "Global > parent"
+	},
+	"Global > scale": {
+		"prefix": "scale",
+		"body": [
+			"scale=\"${1}\"$0"
+		],
+		"description": "Global > scale"
+	},
+	"Global > style": {
+		"prefix": "style",
+		"body": [
+			"style=\"${1}\"$0"
+		],
+		"description": "Global > style"
+	},
+	"Global > url": {
+		"prefix": "url",
+		"body": [
+			"url=\"${1|%SWFPATH%\/plugins,%FIRSTXML%\/include,%FIRSTXML%\/content|}\/$2\"$0"
+		],
+		"description": "Global > url"
+	},
+	"Global > visible": {
+		"prefix": "visible",
+		"body": [
+			"visible=\"${1|true,false|}\"$0"
+		],
+		"description": "Global > visible"
+	},
+	"Global > width": {
+		"prefix": "width",
+		"body": [
+			"width=\"${1}\"$0"
+		],
+		"description": "Global > width"
+	},
+	"Global > x": {
+		"prefix": "x",
+		"body": [
+			"x=\"${1}\"$0"
+		],
+		"description": "Global > x"
+	},
+	"Global > y": {
+		"prefix": "y",
+		"body": [
+			"y=\"${1}\"$0"
+		],
+		"description": "Global > y"
+	},
+	"Global > zorder": {
+		"prefix": "zorder",
+		"body": [
+			"zorder=\"${1}\"$0"
+		],
+		"description": "Global > zorder"
+	},
+
+	// ===================================================================
+	// ATTRIBUTES > LAYER
+	// ===================================================================
+
+
+	"Layer > alpha": {
+		"prefix": "alpha",
+		"body": [
+			"alpha=\"$1\"$0"
+		],
+		"description": "Layer > alpha"
+	},
+	"Layer > autoalpha": {
+		"prefix": "autoalpha",
+		"body": [
+			"autoalpha=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > autoalpha"
+	},
+	"Layer > crop": {
+		"prefix": "crop",
+		"body": [
+			"crop=\"${1}|${2}|${3}|${4}\"$0"
+		],
+		"description": "Layer > crop"
+	},
+	"Layer > onovercrop": {
+		"prefix": "onovercrop",
+		"body": [
+			"onovercrop=\"${1}\"$0"
+		],
+		"description": "Layer > onovercrop"
+	},
+	"Layer > type": {
+		"prefix": "type",
+		"body": [
+			"type=\"${1|image,container,text|}\""
+		],
+		"description": "Layer > type"
+	},
+
+	// ===================================================================
+	// ATTRIBUTESS > LAYER > CONTAINER
+	// ===================================================================
+
+	"Layer > container > bgalpha": {
+		"prefix": "bgalpha",
+		"body": [
+			"bgalpha=\"${1}\"$0"
+		],
+		"description": "Layer > container  > bgalpha"
+	},
+	"Layer > container > bgcapture": {
+		"prefix": "bgcapture",
+		"body": [
+			"bgcapture=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > container  > bgcapture"
+	},
+	"Layer > container + text > bgcolor": {
+		"prefix": "bgcolor",
+		"body": [
+			"bgcolor=\"${1}\"$0"
+		],
+		"description": "Layer > container + text  > bgcolor"
+	},
+
+	// ===================================================================
+	// ATTRIBUTES > lAYER > TEXT
+	// ===================================================================
+
+	"Layer > text > bg": {
+		"prefix": "bg",
+		"body": [
+			"bg=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > text  > bg"
+	},
+	"Layer > text > css": {
+		"prefix": "css",
+		"body": [
+			"css=\"${1}\"$0"
+		],
+		"description": "Layer > text  > css"
+	},
+	"Layer > text > html": {
+		"prefix": "html",
+		"body": [
+			"html=\"${1}\"$0"
+		],
+		"description": "Layer > text  > html"
+	},
+	"Layer > text > vcenter": {
+		"prefix": "vcenter",
+		"body": [
+			"vcenter=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > text  > vcenter"
+	},
+
+	// ===================================================================
+	// ATTRIBUTES > PLUGIN > SHOWTEXT
+	// ===================================================================
+
+	"Layer > text > background": {
+		"prefix": "background",
+		"body": [
+			"background=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > text  > background"
+	},
+	"Layer > text > backgroundcolor": {
+		"prefix": "backgroundcolor",
+		"body": [
+			"backgroundcolor=\"$1\"$0"
+		],
+		"description": "Layer > text  > backgroundcolor"
+	},
+	"Layer > text > backgroundalpha": {
+		"prefix": "backgroundalpha",
+		"body": [
+			"backgroundalpha=\"$1\"$0"
+		],
+		"description": "Layer > text  > backgroundalpha"
+	},
+	"Layer > text > bold": {
+		"prefix": "bold",
+		"body": [
+			"bold=\"${1|true,false|}\"$0"
+		],
+		"description": "Layer > text  > bold"
+	},
+	"Layer > text > border": {
+		"prefix": "border",
+		"body": [
+			"border=\"${1}\"$0"
+		],
+		"description": "Layer > text  > border"
+	},
+	"Layer > text > font": {
+		"prefix": "font",
+		"body": [
+			"font=\"${1}\"$0"
+		],
+		"description": "Layer > text  > font"
+	},
+	"Layer > text > fontsize": {
+		"prefix": "fontsize",
+		"body": [
+			"fontsize=\"${1}\"$0"
+		],
+		"description": "Layer > text  > fontsize"
+	},
+	"Layer > text > padding": {
+		"prefix": "padding",
+		"body": [
+			"padding=\"${1}\"$0"
+		],
+		"description": "Layer > text  > padding"
+	},
+	"Layer > text > textcolor": {
+		"prefix": "textcolor",
+		"body": [
+			"textcolor=\"0x${1}\"$0"
+		],
+		"description": "Layer > text  > textcolor"
+	},
+	"Layer > text > xoffset": {
+		"prefix": "xoffset",
+		"body": [
+			"xoffset=\"${1}\"$0"
+		],
+		"description": "Layer > text  > xoffset"
+	},
+	"Layer > text > yoffset": {
+		"prefix": "yoffset",
+		"body": [
+			"yoffset=\"${1}\"$0"
+		],
+		"description": "Layer > text  > yoffset"
 	}
 }
