@@ -27,6 +27,7 @@
             "id": "krpano",
             "aliases": ["Krpano Markup Language", "krpano"],
             "extensions": ["xml"],
+            "firstLine": "^\\<krpano",
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
@@ -37,6 +38,9 @@
         "snippets": [{
             "language": "krpano",
             "path": "./snippets/xml.json"
-        }]
+        }],
+        "activationEvents": [
+            "*"
+        ]
     }
 }
