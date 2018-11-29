@@ -3,7 +3,7 @@
 	"fileTypes": [
         "xml"
     ],
-    "firstLineMatch": "^\\<krpano",
+    "firstLineMatch": "\\<\\?krpano.*",
 	"scopeName": "source.xml",
 	"patterns": [
 		{
