@@ -24,19 +24,18 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "krpano",
+            "id": "xml",
             "aliases": ["Krpano Markup Language", "krpano"],
-            "extensions": ["xml"],
-            "firstLine": "^\\<krpano",
+            "extensions": [".xml"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "krpano",
+            "language": "xml",
             "scopeName": "source.xml",
             "path": "./syntaxes/krpano-tmLanguage.json"
         }],
         "snippets": [{
-            "language": "krpano",
+            "language": "xml",
             "path": "./snippets/xml.json"
         }],
         "activationEvents": [
